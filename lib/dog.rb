@@ -5,17 +5,16 @@ class Dog
 
   def initialize(dog_name)
     @name = dog_name
-    @@all << @name
-
-    #binding.pry
+    @@all << self
   end
 
   def self.all
-    puts @@all
-    #binding.pry
+    @@all.each do |dog_instance|
+      puts dog_instance.name
+    end
   end
 
-  # def self.clear_all
-  #   @@all.delete
-  # end
+  def self.clear_all
+    @@all.delete
+  end
 end
